@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TempPlayerController : MonoBehaviour
 {
@@ -31,5 +32,7 @@ public class TempPlayerController : MonoBehaviour
         }
 
         Destroy(gameObject, 1.5f);
+
+        SceneManager.LoadScene(2);
     }
 }
