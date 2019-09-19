@@ -47,6 +47,9 @@ public class PointAndClick : MonoBehaviour
                 other.gameObject.SetActive(false);
                 gotHead = true;
             }
+            if(other.gameObject.CompareTag("door")){
+                other.gameObject.SetActive(false);
+            }
             
         }
 
