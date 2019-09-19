@@ -27,7 +27,7 @@ public class PointAndClick : MonoBehaviour
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100)){
-                target = new Vector3(hit.point.x , hit.point.y + transform.position.y, hit.point.z);
+                target = new Vector3(hit.point.x , transform.position.y, hit.point.z);
                 transform.position = Vector3.MoveTowards(transform.position,target,speed);
                 moving = true;
             }
