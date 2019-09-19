@@ -89,7 +89,7 @@ public class FsmMachine : FSM
         this.transform.position = Vector3.MoveTowards(
             this.transform.position,
             patrolPoints[currentPos].transform.position,
-            0.1f);
+            0.8f);
 
         Quaternion targetRotation = Quaternion.LookRotation(patrolPoints[currentPos].transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * curRotSpeed);
