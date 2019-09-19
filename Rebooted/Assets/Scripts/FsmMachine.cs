@@ -69,7 +69,7 @@ public class FsmMachine : FSM
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 200f))
         {
-
+            Debug.Log(hit.transform.tag);
             if (hit.transform.tag == "Player")
             {
                 curState = FSMState.Chase;
@@ -141,10 +141,11 @@ public class FsmMachine : FSM
     /// Check the collision with the bullet
     /// </summary>
     /// <param name="collision"></param>
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
+        Debug.Log(collision.gameObject.tag);
         if(collision.gameObject.tag == "Player")
-            playerTransform.GetComponent<TempPlayerController>().Explode();
+            playerTransform.GetComponent<PointAndClick>().Explode();
     }
    
 
