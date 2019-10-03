@@ -34,13 +34,13 @@ public class EnemyController : MonoBehaviour
 
         agent.SetDestination(target.position);
 
-        if (distance < 50f && chaseRange == false)
+        if (distance < 5f && chaseRange == false)
         {
             AudiManager.instance.ChangeSong(chaseMusic);
             chaseRange = true;
         }
 
-        if (chaseRange == true && distance > 51)
+        if (chaseRange == true && distance > 6)
         {
             AudiManager.instance.ChangeSong(normalMusic);
             chaseRange = false;
